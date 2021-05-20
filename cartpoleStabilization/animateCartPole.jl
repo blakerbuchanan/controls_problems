@@ -19,11 +19,12 @@ thetaTest = 0
 ballRad = 0.15
 wheelRad = 0.15
 pendWidth = 0.1
+sol = solSwing
 
 drawCartPole(sol(0.0)[1],0,pi/6)
 
 numDigits = ndigits(length(sol.t));
-fname = "video/cartpole";
+fname = "video/cartpoleSwingUp";
 i = 1;
 
 for t in sol.t
