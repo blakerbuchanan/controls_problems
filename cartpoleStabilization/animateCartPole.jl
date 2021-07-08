@@ -37,6 +37,21 @@ for t in sol.t
     i = i + 1;
 end
 
+numDigits = ndigits(length(X));
+fname = "video/cartpoleSwingUpALTRO";
+i = 1;
+
+for i in range(1,stop=length(X))
+    # state = X[i,:]
+    drawCartPole(X[i][1],0,X[i][2]);
+    numZeros = numDigits - ndigits(i);
+    firstPart = join(["0" for j in 1:numZeros]);
+    imagei = firstPart*string(i);
+    fn = fname*imagei;
+    savefig(fn)
+    i = i + 1;
+end
+
 rectangle(w, h, x, y) = Shape(x .+ [0,w,w,0], y .+ [0,0,h,h])
 pendbar(w, h, x, y, θ) = Shape([x,x+w*cos(θ),x+w*cos(θ)-h*sin(θ),x+w*cos(θ)-h*sin(θ)-w*cos(θ)], [y,y+w*sin(θ),y+w*sin(θ)+h*cos(θ),y+w*sin(θ)+h*cos(θ)-w*sin(θ)])
 plot(pendbar(0.2, 1.0, 0.0, 0.0, π/4),aspect_ratio=1.0)
