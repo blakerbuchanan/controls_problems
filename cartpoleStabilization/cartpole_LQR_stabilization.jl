@@ -1,11 +1,10 @@
-# Energy-based swing up with LQR stamilization implementation of the cart-pole system
-using DifferentialEquations, LinearAlgebra, Dierckx
+# Use LQR to stabilize the cart-pole system within the basin of attraction of the unstable fixed point
+using DifferentialEquations, LinearAlgebra, Dierckx, Plots, MatrixEquations, LaTeXStrings
+
 include("cartPoleDynamics.jl")
 using .cartPoleDynamics
-using Plots
-using MatrixEquations
-using Debugger, LaTeXStrings
-logocolors = Colors.JULIA_LOGO_COLORS
+
+logocolors = Colors.JULIA_LOGO_COLORS # Use the Julia Logo colors for plotting
 
 function riccati(dS,S,p,t)
     A = p.A; B = p.B; Q = p.Q; R = p.R; tspan = p.Tspan;

@@ -2,8 +2,7 @@ module cartPoleDynamics
 
 cd("/Users/blake/Dropbox/CMU/julia/controlsProblems/cartPoleTrajOpt")
 
-using LinearAlgebra, PolynomialRoots, DifferentialEquations
-# using Debugger
+using LinearAlgebra, DifferentialEquations
 
 export cartPoleDyn, cartPoleDynv2, cartPoleDynLQR, cartPoleDynSwingUp, cartPoleLQRParams, inBasin
 
