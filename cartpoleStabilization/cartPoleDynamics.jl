@@ -29,15 +29,7 @@ end
 
 function cartPoleDynLQR(dq,q,p,t)
     S,R,B = p
-    u = -inv(R)*transpose(B)*S(t)*(q - [0;pi;0;0]);
-    # u = 0
-
-    # E = 0.5*q[4]^2 - cos(q[2]) - 1;
-    # u = Kswing[1]*q[4]*cos(q[2])*E - Kswing[2]*q[1] - Kswing[3]*q[3];
-    # flag = inBasin(q, basin);
-    # if flag == true
-    #     u = -inv(R)*transpose(B)*S(t)*(q - [0;pi;0;0]);
-    # end
+    u = -inv(R)*transpose(B)*S(t)*(q - [0; pi; 0; 0]);
 
     dq[1] = q[3];
     dq[2] = q[4];
@@ -66,21 +58,6 @@ function cartPoleDynSwingUp(dq,q,p,t)
 end
 
 function inBasin(q,basin)
-    # conv = q .- basin;
-    # norms = sqrt.(sum(conv.^2,dims=2));
-
-    # if minimum(norms) < 0.01
-    #     return true;
-    # else
-    #     return false;
-    # end
-
-    # if norm(q - [0, pi, 0, 0]) < 0.01
-    #     return true
-    # else
-    #     return false
-    # end
-
     if q[2] > pi-pi/6 && q[2] < pi+pi/6
         return true
     else

@@ -1,6 +1,6 @@
 module cartPoleDynamics
 
-cd("/Users/blake/Dropbox/CMU/julia/controls/cartpoleStabilization")
+# cd("/Users/blake/Dropbox/CMU/julia/controls/cartpoleStabilization")
 
 using LinearAlgebra, PolynomialRoots, DifferentialEquations
 # using Debugger
@@ -10,7 +10,7 @@ export cartPoleDyn, cartPoleDynLQR, cartPoleDynSwingUp, cartPoleLQRParams, inBas
 function cartPoleDyn(dq,q,p,t)
     S,R,B = p
     u = 0
-
+    
     dq[1] = q[3];
     dq[2] = q[4];
     dq[3] = (1/(1+sin(q[2])^2))*(u + sin(q[2])*(q[4]^2 + cos(q[2])));

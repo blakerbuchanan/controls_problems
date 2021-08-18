@@ -71,7 +71,7 @@ Kswing = [kE, kp, kd];
 
 pcart = riccatiSol, R, B, Kswing, basin
 x0 = [0, -0.01, 0, 0];
-# x0 = [0, pi+0.01, 0, 0];
+
 alg = Tsit5()
 prob = ODEProblem(cartPoleDynSwingUp,x0,Tspan,pcart);
 solSwing = solve(prob, alg, dt = deltaT, saveat=0.01);
