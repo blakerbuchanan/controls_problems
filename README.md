@@ -1,6 +1,6 @@
 ## Implementations of control strategies in Julia
 
-This respository is home to implementations of various nonlinear control strategies on simple underactuated mechanical systems. *Currently only the cartpoleStabilization directory is in a working state.* Note that this repository undergoes continous updates.
+This respository is home to implementations of various nonlinear control strategies on simple underactuated mechanical systems. *Currently only the cartpole_stabilization directory is in a working state.* Note that this repository undergoes continous updates.
 
 ## Downloading and executing
 

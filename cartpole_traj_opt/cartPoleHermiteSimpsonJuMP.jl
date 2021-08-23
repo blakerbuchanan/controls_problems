@@ -3,7 +3,7 @@ using JuMP, LinearAlgebra, NLopt, Interpolations, Plots, JLD2
 include("cartPoleDynamics.jl")
 using .cartPoleDynamics
 
-cd("/Users/blake/Dropbox/CMU/julia/controlsProblems/cartPoleTrajOpt")
+cd("/Users/blake/Dropbox/CMU/julia/controls_problems/cartpole_traj_opt")
 
 # Set initial conditions
 const xc_s = 0 # 
